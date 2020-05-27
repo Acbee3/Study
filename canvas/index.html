@@ -22,10 +22,30 @@
         ctx.restore();
 
         // 绘制刻度
+        ctx.save();
         for(var i = 0; i < 12; i++) {
             ctx.rotate(Math.PI/6);
+            ctx.font = "bold 20px Arial";
+            ctx.textAlign = "center";
             ctx.fillText(i + 1, 0, -160);
         }
+        ctx.beginPath();
+        ctx.arc(0, 0, 8, 0, 2 * Math.PI);
+        ctx.fill();
+        tx.restore();
+
+        // 获取系统时间
+        var date = new Date();
+        var h = date.getHours(),
+        m = date.getMinutes(),
+        s = date.getSeconds(),
+        mil = date.getMilliseconds();
+
+        h = h > 12 ? h - 12 : h;
+
+        // 绘制指针
+        drawLine(h*30 + m/2, 6, 0, -130);
+
 
         function drawRect(x, y, w, h ,r) {
             ctx.save();
@@ -38,8 +58,20 @@
             ctx.stroke();
             ctx.fillStyle = '#111';
             ctx.fill();
+            ctx.restore();
         }
-        ctx.restore();
+
+        function drawLine(deg, lw, ll_0, ll_1, c) {
+            ctx.save();
+            ctx.lineWidth = lw;
+            ctx.lineCap = "round";
+            ctx.beginPath();
+            ctx.moveTo(0, ll_0);
+            ctx.lineTo(0, ll_1);
+            ctx.stroke();
+            ctx.restore();
+        }
+            
         
     </script>
 </body>
