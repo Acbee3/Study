@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-08-17 12:06:09
- * @LastEditTime: 2020-08-17 16:59:02
+ * @LastEditTime: 2020-08-17 17:24:33
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /Code/Webpack/05 打包图片资源/webpack.config.js
@@ -56,6 +56,19 @@ module.exports = {
             template: './src/index.html'
         })
     ],
-    mode: 'production'
+    mode: 'production',
+    // 开发服务器 devServer 用于自动化（自动编译，自动打开浏览器）
+    // 特点：只会在内存中编译打包，不会有实际输出
+    // 指令：npx webpack-dev-server
+    devServer: {
+        // 项目构建后的路径
+        contentBase: resolve(__dirname, 'build'),
+        // 启动 gzip 压缩，体积更小
+        compress: true,
+        // 端口号
+        port: 3000,
+        // 自动打开浏览器
+        open: true
+    }
 }
 
