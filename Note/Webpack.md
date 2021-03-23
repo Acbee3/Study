@@ -16,26 +16,26 @@
 * mode
 
     	* Development 开发模式 可以在本地进行调试（可以运行就行）
-    	* Production 生产环境 代码**优化**后上线（要做的更多）
-    	
-    	const { resolve } = require('path');
-    	
-    		module.exports = {
-    			// 入口文件
-    		  entry: './index.js',
-    			// 输出文件
-    		  output: {       
-    		    filename: 'bundle.js',
-    		    path: resolve(__dirname, 'dist')
-    		  },
-    		  module: {
-    		    rules: [
-    		
-    		    ]
-    		  },
-    		  plugins: [],
-    		  mode: 'development'
-    		};
+        	* Production 生产环境 代码**优化**后上线（要做的更多）
+            	
+            	const { resolve } = require('path');
+                	
+                		module.exports = {
+                			// 入口文件
+                		  entry: './index.js',
+                			// 输出文件
+                		  output: {       
+                		    filename: 'bundle.js',
+                		    path: resolve(__dirname, 'dist')
+                		  },
+                		  module: {
+                		    rules: [
+                		
+                		    ]
+                		  },
+                		  plugins: [],
+                		  mode: 'development'
+                		};
 
 
 
@@ -383,8 +383,8 @@
 ​	cheap-module-source-map：外部
 ​		提示错误代码的准确信息 和 源代码的错误位置
 ​		
-	内联 和 外部 的区别： 1.外部生成了文件，内联是没有的。2.内联构建速度更快
-	
+​	内联 和 外部 的区别： 1.外部生成了文件，内联是没有的。2.内联构建速度更快
+​	
 	开发环境：速度快，调试更友好
 		速度快（eval>inline>cheap>...）
 		eval-cheap-source-map
