@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-04-21 00:01:56
- * @LastEditTime: 2021-05-12 22:46:36
+ * @LastEditTime: 2021-09-22 20:16:29
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /C/005.c
@@ -21,5 +21,5 @@ int main()
        sum = sum + temp;
    }
    weight = sum / 250000;
-   printf("麦子总共重%d", sum);
+   printf("麦子总共重%d", weight);
 }
